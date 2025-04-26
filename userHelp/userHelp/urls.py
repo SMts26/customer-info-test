@@ -20,6 +20,6 @@ from register import views as reg
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', reg.register, name="register"),
+    path('register/', reg.registeruser, name="register"),
     path("", include("userHelpApp.urls")) #whenever I go to this empty string it will go: EX= if we have "MAIN" to access website we have to use MAIN/(what is in urls.py whihc right now is "")
 ]
