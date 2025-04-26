@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% block content %}
+    <style>
+    footer {
+      text-align: center;
+      padding: 3px;
+      color: black;
+    }
+    </style>
+    <h1>Insert Entry:</h1>
+        <UL>
+            {% for item in items %}
+                <li>
+                    {{ item.title }}: {% if item.completed %} Conpleted{% else %}Not Completed{%endif%} <!--doublecourly braces is a vairbale-->
+                </li>
+            {% endfor %}
+        </UL>
+    <footer>
+        <p>Steven inc.</p>
+    </footer>
+{% endblock %}
