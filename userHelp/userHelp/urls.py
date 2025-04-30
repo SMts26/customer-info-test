@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from register import views as reg
+from userHelpApp import views as uha
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', reg.registeruser, name="register"),
-    path("", include("userHelpApp.urls")) #whenever I go to this empty string it will go: EX= if we have "MAIN" to access website we have to use MAIN/(what is in urls.py whihc right now is "")
+    path("", uha.home, name="home"),
+    path("home/", include("userHelpApp.urls")), # whenever I go to this empty string it will go: EX= if we have "MAIN" to access website we have to use MAIN/(what is in urls.py which right now is "")
+    path("", include("register.urls")),
+    path("new/", uha.InsertItem, name="insert")
 ]

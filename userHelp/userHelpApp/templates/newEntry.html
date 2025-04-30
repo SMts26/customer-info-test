@@ -1,4 +1,5 @@
 {% extends "base.html" %} 
+{% block title %} Enter New Item {% endblock %}
 {% block content %}
     <style>
     footer {
@@ -8,13 +9,17 @@
     }
     </style>
     <h1>Insert Entry:</h1>
-        <UL>
+        <!--<UL>
             {% for item in items %}
                 <li>
-                    {{ item.title }}: {% if item.completed %} Conpleted{% else %}Not Completed{%endif%} <!--doublecourly braces is a vairbale-->
+                    {{ item.title }}: {% if item.completed %} Conpleted{% else %}Not Completed{%endif%} <--doublecourly braces is a vairbale--
                 </li>
             {% endfor %}
-        </UL>
+        </UL>-->
+    <form method="POST" action="/add/">
+        {{form}}
+        <button type="submit", name="save">Create New</button>
+    </form>
     <footer>
         <p>Steven inc.</p>
     </footer>
